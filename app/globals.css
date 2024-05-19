@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal Book";
+  font-style: normal;
+  font-weight: normal;
+  src: local("PP Neue Montreal Book"),
+    url("../public/pp-neue-montreal-cufonfonts-webfont/ppneuemontreal-book.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "PP Neue Montreal Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("PP Neue Montreal Italic"),
+    url("../public/pp-neue-montreal-cufonfonts-webfont/ppneuemontreal-italic.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "PP Neue Montreal Thin";
+  font-style: normal;
+  font-weight: normal;
+  src: local("PP Neue Montreal Thin"),
+    url("../public/pp-neue-montreal-cufonfonts-webfont/ppneuemontreal-thin.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "PP Neue Montreal Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("PP Neue Montreal Medium"),
+    url("../public/pp-neue-montreal-cufonfonts-webfont/ppneuemontreal-medium.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "PP Neue Montreal SemiBold italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("PP Neue Montreal SemiBold italic"),
+    url("../public/pp-neue-montreal-cufonfonts-webfont/ppneuemontreal-semibolditalic.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "PP Neue Montreal Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("PP Neue Montreal Bold"),
+    url("../public/pp-neue-montreal-cufonfonts-webfont/ppneuemontreal-bold.woff")
+      format("woff");
+}
+
+body {
+  font-family: "PP Neue Montreal Book";
+  color: #fff;
+}
+.main-btn {
+  padding: 5px 5px;
+  border: 2px solid rgba(244, 63, 94, 1);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+.container-discover,
+.container-immobiliare {
+  background: radial-gradient(
+    58.26% 83.32% at 77.19% 50%,
+    #3c4759 0%,
+    #313a48 38.63%,
+    #303136 79.53%
+  );
+}
+
+.font-light {
+  font-family: "PP Neue Montreal Thin";
+}
+/* ParallaxSection.css */
+
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+  padding: 50px;
+  display: flex;
+  /* align-items: flex-start; */
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.images-container {
+  margin-top: -50px;
+  position: relative;
+  width: 400px; /* Adjust width as needed */
+  height: 500px; /* Adjust height as needed */
+}
+
+.images-container img {
+  width: 100%;
+  height: auto;
+}
+
+.image1 {
+  z-index: 2;
+  top: 30%;
+  left: -30%;
+  transition: transform 0.5s ease-out;
+}
+
+.image2 {
+  z-index: 1;
+  top: 0px; /* Adjust position as needed */
+  left: 0px; /* Adjust position as needed */
+  transition: transform 0.5s ease-out;
+}
+.image1 {
+  z-index: 1;
+  top: 20%;
+  left: -30%;
+}
+
+.image2 {
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+input {
+  border: none !important;
+  font-family: "PP Neue Montreal Medium";
+  outline: none !important;
+}
+
+input:focus{
+  border: none !important;
+}

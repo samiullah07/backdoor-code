@@ -29,7 +29,7 @@ function Zones() {
           </div>
         </div>
         <div>
-          <Image src={"/thumbnail.png"} width={320} height={320} />
+          <Image src={"/thumbnail.png"} alt="thumbnail" width={320} height={320} />
         </div>
       </div>
     </div>

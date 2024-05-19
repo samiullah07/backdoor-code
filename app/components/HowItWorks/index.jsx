@@ -13,7 +13,7 @@ function HowItWorks() {
               <span className="text-rose-400">Trova</span> la migliore Zona:
             </h2>
             <div className="mt-5">
-              <Image src={"/thumbnail.png"} width={320} height={320} />
+              <Image src={"/thumbnail.png"} alt="thumbnail" width={320} height={320} />
             </div>
           </div>
           <div className="text-center px-8">
@@ -22,7 +22,7 @@ function HowItWorks() {
               offerte
             </h2>
             <div className="mt-5">
-              <Image src={"/thumbnail.png"} width={320} height={320} />
+              <Image src={"/thumbnail.png"} alt="thumbnail" width={320} height={320} />
             </div>
           </div>
           <div className="text-center">
@@ -31,7 +31,7 @@ function HowItWorks() {
               immobili:
             </h2>
             <div className="mt-5">
-              <Image src={"/thumbnail.png"} width={320} height={320} />
+              <Image src={"/thumbnail.png"} alt="thumbnail" width={320} height={320} />
             </div>
           </div>
         </div>

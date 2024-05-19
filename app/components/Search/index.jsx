@@ -7,7 +7,7 @@ function Search() {
     <div className="h-[500px] flex justify-center bg-gray-800 items-center border-t-[1px] border-gray-500">
       <div className="flex justify-between">
         <div>
-          <Image src={"/thumbnail.png"} width={320} height={320} />
+          <Image src={"/thumbnail.png"} alt="thumbnail" width={320} height={320} />
         </div>
         <div className="ms-10 w-[660px] min-h-[242px] flex justify-end items-center">
           <div className="flex flex-col items-center">

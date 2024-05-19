@@ -28,6 +28,7 @@ function Discover() {
             <div>
               <Image
                 src={"/logo.png"}
+                alt="logo"
                 height={10000}
                 width={1000000}
                 className="w-[100%] h-[84px]"

@@ -39,7 +39,7 @@ function HowItWorks() {
           <Mainbtn text={"Esplora"} />
         </div>
         <p className="text-[13px] text-center mt-7 leading-[15.4px] font-light">
-          Trova subito offerte immobiliari. Nessun rischio, cancella in
+          Trova subito offerte immobiliari. Nessun rischio&apos; cancella in
           qualsiasi momento.
         </p>
       </div>

@@ -94,12 +94,12 @@ function Immobiliare() {
           <span className="text-rose-400">annuncio</span>.
         </div>
         <div className="text-[13px] mt-5 leading-[15.4px] font-light w-[580px]">
-          Pre-analizziamo tutti gli annunci per te, cosí non devi farlo tu.{" "}
+          Pre-analizziamo tutti gli annunci per te&apos; cosí non devi farlo tu.{" "}
           <br />
-          Scopri il miglior prezzo, la migliore crescita, il miglior rendimento.
+          Scopri il miglior prezzo&apos; la migliore crescita&apos; il miglior rendimento.
           <br />
-          Ricerca per BTL, HMO, ristrutturazione, patrimonio netto negativo,
-          ROI, BMV, condizione e molto altro.
+          Ricerca per BTL&apos; HMO&apos; ristrutturazione&apos; patrimonio netto negativo&apos;
+          ROI&apos; BMV&apos; condizione e molto altro.
         </div>
 
         <form className="flex items-center max-w-lg mx-auto w-[100%] mt-10">

@@ -30,8 +30,8 @@ function Faq() {
             )}
           </h1>
           <div className={`${!faq1 && "hidden"} text-[13px] mt-5 font-light`}>
-            Raccogliamo i dati da diverse fonti, motori di annunci immobiliari
-            online, informazioni dall’Osservatorio del Mercato Immobiliare, dati
+            Raccogliamo i dati da diverse fonti&apos; motori di annunci immobiliari
+            online&apos; informazioni dall’Osservatorio del Mercato Immobiliare&apos; dati
             statistici dall’ISTAT.
           </div>
         </div>
@@ -48,9 +48,9 @@ function Faq() {
             )}
           </h1>
           <div className={`${!faq2 && "hidden"} text-[13px] mt-5 font-light`}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            Lorem ipsum dolor sit amet&apos; consectetur adipiscing elit&apos; sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            ad minim veniam&apos; quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat
           </div>
         </div>
@@ -67,9 +67,9 @@ function Faq() {
             )}
           </h1>
           <div className={`${!faq3 && "hidden"} text-[13px] mt-5 font-light`}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            Lorem ipsum dolor sit amet&apos; consectetur adipiscing elit&apos; sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            ad minim veniam&apos; quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat
           </div>
         </div>
@@ -86,9 +86,9 @@ function Faq() {
             )}
           </h1>
           <div className={`${!faq4 && "hidden"} text-[13px] mt-5 font-light`}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            Lorem ipsum dolor sit amet&apos; consectetur adipiscing elit&apos; sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            ad minim veniam&apos; quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat
           </div>
         </div>

@@ -16,14 +16,14 @@ function Zones() {
               Analizziamo i dati dell’Osservatorio del Mercato Immobiliare e
               quelli di migliaia di annunci <br /> per sondare il mercato e
               trovare zone ad alto rendimento. <br /> Utilizza i nostri potenti
-              indici per scoprire il miglior prezzo, la migliore crescita, il
+              indici per scoprire il miglior prezzo&apos; la migliore crescita&apos; il
               miglior ROI.
             </p>
             <div className="mt-10">
               <Mainbtn text={"Esplora"} />
             </div>
             <p className="text-[13px] text-center mt-10 leading-[15.4px] font-light">
-              Trova subito offerte immobiliari. Nessun rischio, cancella in
+              Trova subito offerte immobiliari. Nessun rischio&apos; cancella in
               qualsiasi momento.
             </p>
           </div>

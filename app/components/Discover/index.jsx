@@ -36,22 +36,22 @@ function Discover() {
             </div>
           </div>
           <p className="text-[28px] mt-8 font-extralight">
-            Trova il migliore rendimento,{" "}
+            Trova il migliore rendimento&apos;{" "}
             <span className="text-rose-400">subito</span>.
           </p>
           <p className="text-[13px] mt-5 leading-[15.4px] font-light">
             Usa la potenza dell'intelligenza artificiale per trovare e reperire
             le migliori offerte immobiliari. Utilizza i nostri potenti indici
-            per scoprire il miglior prezzo, la migliore crescita, il miglior
-            rendimento. Ricerca per BTL, HMO, ristrutturazione, patrimonio netto
-            negativo, ROI, BMV, condizione e molto altro.
+            per scoprire il miglior prezzo&apos; la migliore crescita&apos; il miglior
+            rendimento. Ricerca per BTL&apos; HMO&apos; ristrutturazione&apos; patrimonio netto
+            negativo&apos; ROI&apos; BMV&apos; condizione e molto altro.
           </p>
 
           <div className="flex justify-center mt-10">
             <Mainbtn text={"Prova Gratis"} />
           </div>
           <p className="text-[13px] mt-10 leading-[15.4px] font-light">
-            Trova subito offerte immobiliari. Nessun rischio, cancella in
+            Trova subito offerte immobiliari. Nessun rischio&apos; cancella in
             qualsiasi momento.
           </p>
         </div>

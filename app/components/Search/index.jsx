@@ -18,15 +18,15 @@ function Search() {
             <p className="text-[13px] text-center mt-5 leading-[15.4px] font-light px-7">
               Analizziamo migliaia di annuci ogni giorno per scoprire le
               migliori offerte. Con i nostri potenti indici puoi scoprire il
-              miglior prezzo, la migliore crescita, il miglior rendimento.
-              Ricerca per BTL, HMO, ristrutturazione, patrimonio netto negativo,
-              ROI, BMV, condizione e molto altro.
+              miglior prezzo&apos; la migliore crescita&apos; il miglior rendimento.
+              Ricerca per BTL&apos; HMO&apos; ristrutturazione&apos; patrimonio netto negativo&apos;
+              ROI&apos; BMV&apos; condizione e molto altro.
             </p>
             <div className="mt-10">
               <Mainbtn text={"Scopri"} classes={"ps-20"} />
             </div>
             <p className="text-[13px] text-center mt-10 leading-[15.4px] font-light">
-              Trova subito offerte immobiliari. Nessun rischio, cancella in
+              Trova subito offerte immobiliari. Nessun rischio&apos; cancella in
               qualsiasi momento.
             </p>
           </div>

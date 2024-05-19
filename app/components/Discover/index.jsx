@@ -40,7 +40,7 @@ function Discover() {
             <span className="text-rose-400">subito</span>.
           </p>
           <p className="text-[13px] mt-5 leading-[15.4px] font-light">
-            Usa la potenza dell'intelligenza artificiale per trovare e reperire
+            Usa la potenza dell&apos;intelligenza artificiale per trovare e reperire
             le migliori offerte immobiliari. Utilizza i nostri potenti indici
             per scoprire il miglior prezzo&apos; la migliore crescita&apos; il miglior
             rendimento. Ricerca per BTL&apos; HMO&apos; ristrutturazione&apos; patrimonio netto

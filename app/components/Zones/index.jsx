@@ -4,9 +4,9 @@ import Image from "next/image";
 
 function Zones() {
   return (
-    <div className="h-[500px] flex justify-center bg-gray-900 items-center border-t-[1px] border-gray-500">
-      <div className="flex justify-between">
-        <div className="w-[660px] min-h-[242px] flex items-center me-10">
+    <div className="min-h-[500px] py-10 flex justify-center items-center border-t-[1px] border-zinc-500">
+      <div className="flex flex-col-reverse md:flex-row md:justify-between">
+        <div className=" md:w-[660px] px-4 w-[100%] min-h-[242px] flex items-center md:me-10">
           <div className="flex flex-col items-center">
             <p className="text-[28px] text-center">
               Trova le zone piú vantaggiose{" "}
@@ -16,8 +16,8 @@ function Zones() {
               Analizziamo i dati dell’Osservatorio del Mercato Immobiliare e
               quelli di migliaia di annunci <br /> per sondare il mercato e
               trovare zone ad alto rendimento. <br /> Utilizza i nostri potenti
-              indici per scoprire il miglior prezzo&apos; la migliore crescita&apos; il
-              miglior ROI.
+              indici per scoprire il miglior prezzo&apos; la migliore
+              crescita&apos; il miglior ROI.
             </p>
             <div className="mt-10">
               <Mainbtn text={"Esplora"} />
@@ -28,8 +28,13 @@ function Zones() {
             </p>
           </div>
         </div>
-        <div>
-          <Image src={"/thumbnail.png"} alt="thumbnail" width={320} height={320} />
+        <div className="flex justify-center mb-10 md:mb-0">
+          <Image
+            src={"/thumbnail.png"}
+            alt="thumbnail"
+            width={320}
+            height={320}
+          />
         </div>
       </div>
     </div>

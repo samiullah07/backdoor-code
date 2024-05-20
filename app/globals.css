@@ -94,7 +94,6 @@ body {
   position: relative;
   overflow: hidden;
   padding: 50px;
-  display: flex;
   /* align-items: flex-start; */
   justify-content: center;
   min-height: 100vh;
@@ -103,8 +102,7 @@ body {
 .images-container {
   margin-top: -50px;
   position: relative;
-  width: 400px; /* Adjust width as needed */
-  height: 500px; /* Adjust height as needed */
+ 
 }
 
 .images-container img {
@@ -114,21 +112,15 @@ body {
 
 .image1 {
   z-index: 2;
-  top: 30%;
-  left: -30%;
   transition: transform 0.5s ease-out;
 }
 
 .image2 {
   z-index: 1;
-  top: 0px; /* Adjust position as needed */
-  left: 0px; /* Adjust position as needed */
   transition: transform 0.5s ease-out;
 }
 .image1 {
   z-index: 1;
-  top: 20%;
-  left: -30%;
 }
 
 .image2 {
@@ -143,6 +135,25 @@ input {
   outline: none !important;
 }
 
-input:focus{
+input:focus {
   border: none !important;
+}
+.grid-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(
+      to right,
+      rgba(79, 79, 79, 0.18) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(79, 79, 79, 0.18) 1px, transparent 1px);
+  background-size: 14px 24px;
+}
+
+.all-sec {
+  position: relative; /* Ensure content is above the background */
+  z-index: 5;
 }

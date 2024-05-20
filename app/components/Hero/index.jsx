@@ -18,14 +18,14 @@ function Hero() {
           />
         </div>
       </div>
-      <div className="absolute top-[40%] left-[5%] w-[500px]">
-        <div className="text-[40px] leading-[48px]">
+      <div className="absolute flex flex-col items-center top-[40%] md:left-[5%] w-[100%] md:w-[500px]">
+        <div className="text-[25px] text-center md:text-right md:text-[40px] leading-[48px] px-5 md:px-0">
           Il tuo accesso ai <span className="text-rose-400">segreti</span> del
           mercato immobiliare.
         </div>
         <Mainbtn classes="mt-10" text={"Scopri Ora"} />
       </div>
-      <Spline scene="https://prod.spline.design/Q3GoEbzXIvVSWJyo/scene.splinecode" className="min-h-[100vh]" setZoom={110}/>
+      <Spline scene="https://prod.spline.design/Q3GoEbzXIvVSWJyo/scene.splinecode" className="h-[100vh]" style={{height:"100vh"}}/>
     </div>
   );
 }

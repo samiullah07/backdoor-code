@@ -19,8 +19,8 @@ function Sect2() {
           />
         </div>
       </div>
-      <Spline scene="https://prod.spline.design/vc7tQXI9HNs-x3ge/scene.splinecode" className="min-h-[100vh]" />
-      <div className="absolute bottom-16 left-[43%]">
+      <Spline scene="https://prod.spline.design/vc7tQXI9HNs-x3ge/scene.splinecode" className="min-h-[100vh]" style={{height:"100vh"}} />
+      <div className="absolute flex justify-center bottom-16 w-[100%]">
         <Mainbtn text={"Scopri Ora"} />
       </div>
     </div>

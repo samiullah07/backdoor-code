@@ -5,7 +5,7 @@ import { FaXTwitter } from "react-icons/fa6";
 function Footer() {
   return (
     <div>
-      <footer className="bg-gray-900 border-t-[1px] py-10 border-gray-500">
+      <footer className="bg-zinc-900 border-t-[1px] py-10 border-zinc-500">
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between">
             <div className="md:flex">
@@ -163,7 +163,7 @@ function Footer() {
               </div>
             </div>
 
-            <div className="w-[500px]">
+            <div className="w-[100%] md:w-[500px]">
               <h2 className="mb-6 text-sm font-semibold text-white">
                 Iscriviti
               </h2>
@@ -179,7 +179,7 @@ function Footer() {
                 <div className="relative w-full">
                   <input
                     type="text"
-                    className="bg-gray-[#27272A] border-0 focus:shadow-lg text-sm rounded-[30px] block w-full  p-3  bg-gray-800 text-white"
+                    className="bg-zinc-[#27272A] border-0 focus:shadow-lg text-sm rounded-[30px] block w-full  p-3  bg-zinc-800 text-white"
                     placeholder="Inserisci qui la tua mail."
                     required
                   />
@@ -209,7 +209,7 @@ function Footer() {
               </p>
             </div>
           </div>
-          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <hr className="my-6 border-zinc-200 sm:mx-auto dark:border-zinc-700 lg:my-8" />
           <div className="sm:flex sm:items-center sm:justify-between">
             <div className="flex items-center">
               <span className="text-sm text-white sm:text-center">
@@ -234,31 +234,31 @@ function Footer() {
             <div className="flex mt-4 sm:justify-center sm:mt-0">
               <a
                 href="#"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white"
               >
                 <FaFacebook />
               </a>
               <a
                 href="#"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+                className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white ms-5"
               >
                 <FaInstagram />
               </a>
               <a
                 href="#"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+                className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white ms-5"
               >
                 <FaXTwitter />
               </a>
               <a
                 href="#"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+                className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white ms-5"
               >
                 <FaLinkedin />
               </a>
               <a
                 href="#"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+                className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white ms-5"
               >
                 <FaYoutube />
               </a>

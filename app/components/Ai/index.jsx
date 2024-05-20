@@ -4,12 +4,12 @@ import Mainbtn from "../MainBtn";
 
 function Ai() {
   return (
-    <div className="h-[500px] flex justify-center bg-gray-800 items-center border-t-[1px] border-gray-500">
-      <div className="flex justify-between">
-        <div>
+    <div className="min-h-[500px] py-12 flex justify-center  items-center border-t-[1px] border-zinc-500">
+      <div className="md:flex justify-between">
+        <div className="flex justify-center mb-10 md:mb-0">
           <Image src={"/thumbnail.png"} width={320} height={320} alt="thumbnail"/>
         </div>
-        <div className="ms-10 w-[660px] min-h-[242px] flex justify-end items-center">
+        <div className="md:ms-10 md:w-[660px] px-4 min-h-[242px] md:flex justify-end items-center">
           <div className="flex flex-col items-center">
             <p className="text-[28px] text-center">
               La potenza dell’<span className="text-rose-400">AI</span> a

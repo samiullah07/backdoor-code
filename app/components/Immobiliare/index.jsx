@@ -93,23 +93,24 @@ function Immobiliare() {
           Calcola il potenziale di ogni{" "}
           <span className="text-rose-400">annuncio</span>.
         </div>
-        <div className="text-[13px] mt-5 leading-[15.4px] font-light w-[580px]">
+        <div className="text-[13px] mt-5 leading-[15.4px] font-light px-4 md:px-0 w-[100%] md:w-[580px]">
           Pre-analizziamo tutti gli annunci per te&apos; cosí non devi farlo tu.{" "}
           <br />
-          Scopri il miglior prezzo&apos; la migliore crescita&apos; il miglior rendimento.
+          Scopri il miglior prezzo&apos; la migliore crescita&apos; il miglior
+          rendimento.
           <br />
-          Ricerca per BTL&apos; HMO&apos; ristrutturazione&apos; patrimonio netto negativo&apos;
-          ROI&apos; BMV&apos; condizione e molto altro.
+          Ricerca per BTL&apos; HMO&apos; ristrutturazione&apos; patrimonio
+          netto negativo&apos; ROI&apos; BMV&apos; condizione e molto altro.
         </div>
 
-        <form className="flex items-center max-w-lg mx-auto w-[100%] mt-10">
+        <form className="flex items-center max-w-lg mx-auto w-[100%]  px-4 md:px-0 mt-10">
           <label htmlFor="voice-search" className="sr-only">
             Search
           </label>
           <div className="relative w-full">
             <input
               type="text"
-              className="bg-gray-[#27272A] border-0 focus:shadow-lg text-sm rounded-[30px] block w-full  p-3  bg-gray-800 text-white"
+              className="bg-zinc-[#27272A] border-0 focus:shadow-lg text-sm rounded-[30px] block w-full  p-3  bg-zinc-800 text-white"
               placeholder="Incolla qui il link di Immobiliare.it"
               required
             />

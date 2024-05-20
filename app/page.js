@@ -17,10 +17,18 @@ export default function Home() {
       <Sect2 />
       <Discover />
       <Immobiliare />
-      <Search />
-      <Zones />
-      <Ai />
-      <HowItWorks />
+      <div>
+        <div className="relative h-full w-full bg-zinc-900">
+          <div class="grid-background"></div>
+
+          <div className="all-sec">
+            <Search />
+            <Zones />
+            <Ai />
+            <HowItWorks />
+          </div>
+        </div>
+      </div>
       <Faq />
       <Footer />
     </>

@@ -19,7 +19,16 @@ function Sect2() {
           />
         </div>
       </div>
-      <Spline scene="https://prod.spline.design/vc7tQXI9HNs-x3ge/scene.splinecode" className="min-h-[100vh]" style={{height:"100vh"}} />
+      <div className="absolute flex flex-col items-center md:block top-[45%] md:ps-10 w-[100%] md:w-[100%]">
+        <div className="text-[25px] reat-estate text-zinc-300 font-[400] text-start md:text-[75px] leading-[48px] uppercase px-5 md:px-0">
+          REAL ESTATE insights
+        </div>
+      </div>
+      <Spline
+        scene="https://prod.spline.design/vc7tQXI9HNs-x3ge/scene.splinecode"
+        className="min-h-[100vh]"
+        style={{ height: "100vh" }}
+      />
       <div className="absolute flex justify-center bottom-16 w-[100%]">
         <Mainbtn text={"Scopri Ora"} />
       </div>

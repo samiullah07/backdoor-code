@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -102,7 +102,6 @@ body {
 .images-container {
   margin-top: -50px;
   position: relative;
- 
 }
 
 .images-container img {
@@ -156,4 +155,10 @@ input:focus {
 .all-sec {
   position: relative; /* Ensure content is above the background */
   z-index: 5;
+}
+
+.reat-estate {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 600;
+  font-style: normal;
 }

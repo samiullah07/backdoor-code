@@ -1,15 +1,11 @@
 "use client";
-import React, { useEffect, useRef, useState, useMemo } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 function Faq() {
   const [activeFaq, setActiveFaq] = useState(null);
 
-  // Initialize faqRefs with useMemo to avoid re-creating the array on every render
-  const faqRefs = useMemo(
-    () => [useRef(null), useRef(null), useRef(null), useRef(null)],
-    []
-  );
+  const faqRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
 
   useEffect(() => {
     faqRefs.forEach((ref, index) => {

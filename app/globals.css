@@ -162,3 +162,19 @@ input:focus {
   font-weight: 600;
   font-style: normal;
 }
+
+.container-card {
+  background: url("../public/card-bg.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wizard-input::-webkit-inner-spin-button,
+.wizard-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

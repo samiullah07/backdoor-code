@@ -17,7 +17,9 @@ const steps = [
   { id: 5, component: Wizard5 },
   { id: 6, component: Wizard6 },
 ];
-function card() {
+
+function Card() {
+  // Changed from card to Card
   const [currentStep, setCurrentStep] = useState(0);
   const [inProp, setInProp] = useState(true);
 
@@ -57,4 +59,4 @@ function card() {
   );
 }
 
-export default card;
+export default Card; // Changed from card to Card

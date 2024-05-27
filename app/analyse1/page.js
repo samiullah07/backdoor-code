@@ -573,6 +573,7 @@ function page() {
                 src={"/map.png"}
                 width={1000000000000000}
                 height={100000000000000}
+                alt="map"
                 className="w-[100%] h-[100%] rounded-xl"
               />
               <p className="text-sm mt-3">Milano, Centro.</p>

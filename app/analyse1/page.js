@@ -134,7 +134,7 @@ const valueFormatter = function (number) {
   return "$ " + new Intl.NumberFormat("us").format(number).toString();
 };
 
-function page() {
+function Page() {
   const [openSections, setOpenSections] = useState([
     true,
     true,
@@ -785,4 +785,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

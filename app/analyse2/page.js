@@ -91,7 +91,7 @@ const chartdat3 = [
     Rent: 124,
   },
 ];
-function page() {
+function Page() {
   const [openSections, setOpenSections] = useState([true, true, true]); // Initial state: all sections open
   const sectionRefs = [useRef(null), useRef(null), useRef(null)];
 
@@ -324,4 +324,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

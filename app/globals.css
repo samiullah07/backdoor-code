@@ -63,7 +63,7 @@
 }
 
 body {
-  font-family: "PP Neue Montreal Book";
+  font-family: "PP Neue Montreal Book" !important;
   color: #fff;
 }
 .main-btn {
@@ -86,7 +86,7 @@ body {
 }
 
 .font-light {
-  font-family: "PP Neue Montreal Thin";
+  font-family: "PP Neue Montreal Thin" !important;
 }
 /* ParallaxSection.css */
 
@@ -130,7 +130,7 @@ body {
 
 input {
   border: none !important;
-  font-family: "PP Neue Montreal Medium";
+  font-family: "PP Neue Montreal Medium" !important;
   outline: none !important;
 }
 
@@ -158,7 +158,7 @@ input:focus {
 }
 
 .reat-estate {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "Bebas Neue", sans-serif !important;
   font-weight: 600;
   font-style: normal;
 }

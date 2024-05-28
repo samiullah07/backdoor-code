@@ -1,5 +1,7 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import {
+  IoIosArrowDown,
   IoIosArrowUp,
   IoIosInformationCircleOutline,
   IoMdStarOutline,
@@ -7,7 +9,7 @@ import {
 import { IoShareSocialOutline } from "react-icons/io5";
 import { MdOutlinePictureAsPdf } from "react-icons/md";
 import { TbWorldSearch } from "react-icons/tb";
-import { AreaChart, ProgressBar } from "@tremor/react";
+import { AreaChart, ProgressBar, SparkAreaChart } from "@tremor/react";
 
 const chartdata2 = [
   {
@@ -90,6 +92,27 @@ const chartdat3 = [
   },
 ];
 function page() {
+  const [openSections, setOpenSections] = useState([true, true, true]); // Initial state: all sections open
+  const sectionRefs = [useRef(null), useRef(null), useRef(null)];
+
+  useEffect(() => {
+    sectionRefs.forEach((ref, index) => {
+      if (openSections[index]) {
+        ref.current.style.maxHeight = `${ref.current.scrollHeight}px`;
+      } else {
+        ref.current.style.maxHeight = "0px";
+      }
+    });
+  }, [openSections]);
+
+  const toggleSection = (index) => {
+    setOpenSections((prevState) => {
+      const newState = [...prevState];
+      newState[index] = !newState[index];
+      return newState;
+    });
+  };
+
   return (
     <div className="container-analyse bg-zinc-900 min-h-[100vh]">
       <div className="px-10 py-5">
@@ -123,19 +146,17 @@ function page() {
           </div>
         </div>
 
-        <div className="mt-10 md:mt-0">
+        <div className="mt-10">
           <div className="flex flex-col-reverse md:flex-row justify-between">
             <div className="md:w-[45%]">
-              <AreaChart
-                className="mt-4 h-72"
+              <SparkAreaChart
                 data={chartdata2}
                 index="null"
                 categories={["Price"]}
                 colors={["green"]}
-                yAxisWidth={0}
               />
             </div>
-            <div className="md:w-[45%] mb-5 md:mb-0">
+            <div className="md:w-[45%] mb-5">
               <div className="mb-5">
                 <p className="flex items-center text-[14px] text-gray-300">
                   Indice di Rendita{" "}
@@ -148,15 +169,13 @@ function page() {
               <ProgressBar value={70} color="green" />
             </div>
           </div>
-          <div className="flex flex-col-reverse md:flex-row justify-between">
+          <div className="flex flex-col-reverse md:flex-row justify-between mb-5  ">
             <div className="md:w-[45%]">
-              <AreaChart
-                className="mt-4 h-72"
+              <SparkAreaChart
                 data={chartdata2}
                 index="null"
                 categories={["Price"]}
                 colors={["red"]}
-                yAxisWidth={0}
               />
             </div>
             <div className="md:w-[45%] mb-5 md:mb-0">
@@ -174,13 +193,11 @@ function page() {
           </div>
           <div className="flex flex-col-reverse md:flex-row justify-between">
             <div className="md:w-[45%]">
-              <AreaChart
-                className="mt-4 h-72"
+              <SparkAreaChart
                 data={chartdata2}
                 index="null"
                 categories={["Price"]}
                 colors={["green"]}
-                yAxisWidth={null}
               />
             </div>
             <div className="md:w-[45%] mb-5 md:mb-0">
@@ -201,9 +218,22 @@ function page() {
         <div className="mt-10">
           <p className="text-[12px] flex items-center ">
             Storico dei prezzi e stima di crescita
-            <IoIosArrowUp className="text-[15px] ms-4" />
+            {openSections[0] ? (
+              <IoIosArrowUp
+                className="text-[15px] ms-4 cursor-pointer"
+                onClick={() => toggleSection(0)}
+              />
+            ) : (
+              <IoIosArrowDown
+                className="text-[15px] ms-4 cursor-pointer"
+                onClick={() => toggleSection(0)}
+              />
+            )}{" "}
           </p>
-          <div className="mt-5">
+          <div
+            ref={sectionRefs[0]}
+            className="transition-max-height duration-300 ease-in-out overflow-hidden mt-5"
+          >
             <h3 className="text-lg ">Prezzi degli Immobili</h3>
             <p className="text-[14px] text-gray-500">€/mq</p>
 
@@ -221,9 +251,22 @@ function page() {
         <div className="mt-10">
           <p className="text-[12px] flex items-center ">
             Storico dei prezzi e stima di crescita
-            <IoIosArrowUp className="text-[15px] ms-4" />
+            {openSections[1] ? (
+              <IoIosArrowUp
+                className="text-[15px] ms-4 cursor-pointer"
+                onClick={() => toggleSection(1)}
+              />
+            ) : (
+              <IoIosArrowDown
+                className="text-[15px] ms-4 cursor-pointer"
+                onClick={() => toggleSection(1)}
+              />
+            )}{" "}
           </p>
-          <div className="mt-5">
+          <div
+            ref={sectionRefs[1]}
+            className="transition-max-height duration-300 ease-in-out overflow-hidden mt-5"
+          >
             <h3 className="text-lg ">Prezzi degli Affitti</h3>
             <p className="text-[14px] text-gray-500">€/mq mensile</p>
 
@@ -240,9 +283,22 @@ function page() {
         <div className="mt-10">
           <p className="text-[12px] flex items-center ">
             Storico della rendita
-            <IoIosArrowUp className="text-[15px] ms-4" />
+            {openSections[2] ? (
+              <IoIosArrowUp
+                className="text-[15px] ms-4 cursor-pointer"
+                onClick={() => toggleSection(2)}
+              />
+            ) : (
+              <IoIosArrowDown
+                className="text-[15px] ms-4 cursor-pointer"
+                onClick={() => toggleSection(2)}
+              />
+            )}{" "}
           </p>
-          <div className="mt-5">
+          <div
+            ref={sectionRefs[2]}
+            className="transition-max-height duration-300 ease-in-out overflow-hidden mt-5"
+          >
             <h3 className="text-lg ">Rendita</h3>
             <p className="text-[14px] text-gray-500">€/mq</p>
 

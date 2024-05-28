@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
+  IoIosArrowDown,
   IoIosArrowUp,
   IoIosInformationCircleOutline,
   IoMdStarOutline,
@@ -134,6 +135,49 @@ const valueFormatter = function (number) {
 };
 
 function page() {
+  const [openSections, setOpenSections] = useState([
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+  ]); // Initial state: all sections open
+  const sectionRefs = [
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+  ];
+
+  useEffect(() => {
+    sectionRefs.forEach((ref, index) => {
+      if (openSections[index]) {
+        ref.current.style.maxHeight = `${ref.current.scrollHeight}px`;
+      } else {
+        ref.current.style.maxHeight = "0px";
+      }
+    });
+  }, [openSections]);
+
+  const toggleSection = (index) => {
+    setOpenSections((prevState) => {
+      const newState = [...prevState];
+      newState[index] = !newState[index];
+      return newState;
+    });
+  };
+
   return (
     <div className="container-analyse bg-zinc-900 min-h-[100vh]">
       <div className="px-10 py-5">
@@ -196,77 +240,123 @@ function page() {
         <div>
           <div className="mt-10">
             <p className="text-[12px] flex items-center">
-              Indicatori Backdoor. <IoIosArrowUp className="text-[15px] ms-4" />
+              Indicatori Backdoor.
+              {openSections[0] ? (
+                <IoIosArrowUp
+                  className="text-[15px] ms-4 cursor-pointer"
+                  onClick={() => toggleSection(0)}
+                />
+              ) : (
+                <IoIosArrowDown
+                  className="text-[15px] ms-4 cursor-pointer"
+                  onClick={() => toggleSection(0)}
+                />
+              )}
             </p>
           </div>
-          <div className="md:flex justify-between mt-8 md:gap-14">
-            <div className="w-[100%] mb-5 md:mb-0">
-              <div className="mb-5">
-                <p className="flex items-center text-[14px] text-gray-300">
-                  Indice di Rendita{" "}
-                  <IoIosInformationCircleOutline className="ms-3 text-[20px] text-white" />
-                </p>
-                <p className="text-green-300 ">
-                  <span className="text-[30px] font-bold">7.2 </span>/ 10
-                </p>
+          <div
+            ref={sectionRefs[0]}
+            className="transition-max-height duration-300 ease-in-out overflow-hidden"
+          >
+            <div className="md:flex justify-between mt-8 md:gap-14">
+              <div className="w-[100%] mb-5 md:mb-0">
+                <div className="mb-5">
+                  <p className="flex items-center text-[14px] text-gray-300">
+                    Indice di Rendita{" "}
+                    <IoIosInformationCircleOutline className="ms-3 text-[20px] text-white" />
+                  </p>
+                  <p className="text-green-300 ">
+                    <span className="text-[30px] font-bold">7.2 </span>/ 10
+                  </p>
+                </div>
+                <ProgressBar value={70} color="green" />
               </div>
-              <ProgressBar value={70} color="green" />
-            </div>
-            <div className="w-[100%] mb-5 md:mb-0">
-              <div className="mb-5">
-                <p className="flex items-center text-[14px] text-gray-300">
-                  Indice di Domanda{" "}
-                  <IoIosInformationCircleOutline className="ms-3 text-[20px] text-white" />
-                </p>
-                <p className="text-red-300 ">
-                  <span className="text-[30px] font-bold">3.2 </span>/ 10
-                </p>
+              <div className="w-[100%] mb-5 md:mb-0">
+                <div className="mb-5">
+                  <p className="flex items-center text-[14px] text-gray-300">
+                    Indice di Domanda{" "}
+                    <IoIosInformationCircleOutline className="ms-3 text-[20px] text-white" />
+                  </p>
+                  <p className="text-red-300 ">
+                    <span className="text-[30px] font-bold">3.2 </span>/ 10
+                  </p>
+                </div>
+                <ProgressBar value={30} color="red" />
               </div>
-              <ProgressBar value={30} color="red" />
-            </div>
-            <div className="w-[100%] mb-5 md:mb-0">
-              <div className="mb-5">
-                <p className="flex items-center text-[14px] text-gray-300">
-                  Indice di Prezzo{" "}
-                  <IoIosInformationCircleOutline className="ms-3 text-[20px] text-white" />
-                </p>
-                <p className="text-green-300 ">
-                  <span className="text-[30px] font-bold">6.6 </span>/ 10
-                </p>
+              <div className="w-[100%] mb-5 md:mb-0">
+                <div className="mb-5">
+                  <p className="flex items-center text-[14px] text-gray-300">
+                    Indice di Prezzo{" "}
+                    <IoIosInformationCircleOutline className="ms-3 text-[20px] text-white" />
+                  </p>
+                  <p className="text-green-300 ">
+                    <span className="text-[30px] font-bold">6.6 </span>/ 10
+                  </p>
+                </div>
+                <ProgressBar value={60} color="green" />
               </div>
-              <ProgressBar value={60} color="green" />
             </div>
           </div>
         </div>
+
         <div>
           <div className="mt-10">
             <p className="text-[12px] flex items-center">
               Aspettativa di crescita dei guadagni rispetto ai pagamenti{" "}
-              <IoIosArrowUp className="text-[15px] ms-4" />
+              {openSections[1] ? (
+                <IoIosArrowUp
+                  className="text-[15px] ms-4 cursor-pointer"
+                  onClick={() => toggleSection(1)}
+                />
+              ) : (
+                <IoIosArrowDown
+                  className="text-[15px] ms-4 cursor-pointer"
+                  onClick={() => toggleSection(1)}
+                />
+              )}
             </p>
           </div>
-          <div className="mt-5">
-            <h3 className=" text-[18px] text-gray-300">Breakeven</h3>
-            <p className="text-[14px] text-gray-500">Subtitle</p>
-            <AreaChart
-              className="mt-4 h-72"
-              data={chartdata}
-              index="date"
-              yAxisWidth={65}
-              categories={["Pagamenti", "Guadagni"]}
-              colors={["green", "red"]}
-              valueFormatter={valueFormatter}
-            />
+          <div
+            ref={sectionRefs[1]}
+            className="transition-max-height duration-300 ease-in-out overflow-hidden"
+          >
+            <div className="mt-5">
+              <h3 className=" text-[18px] text-gray-300">Breakeven</h3>
+              <p className="text-[14px] text-gray-500">Subtitle</p>
+              <AreaChart
+                className="mt-4 h-72"
+                data={chartdata}
+                index="date"
+                yAxisWidth={65}
+                categories={["Pagamenti", "Guadagni"]}
+                colors={["green", "red"]}
+                valueFormatter={valueFormatter}
+              />
+            </div>
           </div>
         </div>
+
         <div>
           <div className="mt-10">
             <p className="text-[12px] flex items-center">
               Descrizione.
-              <IoIosArrowUp className="text-[15px] ms-4" />
+              {openSections[2] ? (
+                <IoIosArrowUp
+                  className="text-[15px] ms-4 cursor-pointer"
+                  onClick={() => toggleSection(2)}
+                />
+              ) : (
+                <IoIosArrowDown
+                  className="text-[15px] ms-4 cursor-pointer"
+                  onClick={() => toggleSection(2)}
+                />
+              )}
             </p>
           </div>
-          <div className="text-[12px] text-gray-50 mt-5">
+          <div
+            ref={sectionRefs[2]}
+            className="transition-max-height duration-300 ease-in-out overflow-hidden text-[12px] text-gray-50 mt-5"
+          >
             <p>BILOCALE NUOVO CON BOX - PORTA NAVIGLIO GRANDE</p>
             <p>
               Una nuova storia da abitare nella tua nuova casa firmata Abitare
@@ -279,203 +369,274 @@ function page() {
             </p>
           </div>
         </div>
-
         <div className="mt-10 flex justify-between">
           <div className="w-[45%]">
             <p className="text-[12px] flex items-center">
               Informazioni sull’Immobile.
-              <IoIosArrowUp className="text-[15px] ms-4" />
+              {openSections[3] ? (
+                <IoIosArrowUp
+                  className="text-[15px] ms-4 cursor-pointer"
+                  onClick={() => toggleSection(3)}
+                />
+              ) : (
+                <IoIosArrowDown
+                  className="text-[15px] ms-4 cursor-pointer"
+                  onClick={() => toggleSection(3)}
+                />
+              )}{" "}
             </p>
-            <div className="mt-5 text-gray-50">
-              <p className="text-[12px]">
-                <span className="text-[20px]">€ 100,000 </span> is the{" "}
-                <b>price of this listing</b>
-              </p>
-              <p className="text-[12px]">
-                <span className="text-[20px]">60 </span> m2 is the{" "}
-                <b>commercial surface area</b>
-              </p>
+            <div
+              ref={sectionRefs[3]}
+              className="transition-max-height duration-300 ease-in-out overflow-hidden"
+            >
+              <div className="mt-5 text-gray-50">
+                <p className="text-[12px]">
+                  <span className="text-[20px]">€ 100,000 </span> is the{" "}
+                  <b>price of this listing</b>
+                </p>
+                <p className="text-[12px]">
+                  <span className="text-[20px]">60 </span> m2 is the{" "}
+                  <b>commercial surface area</b>
+                </p>
 
-              <p className="text-[12px]">
-                <span className="text-[20px]">2 rooms, </span>optimal condition
-              </p>
-            </div>
-            <div className="mt-5">
-              <p className="text-rose-400 text-[12px] flex items-center">
-                <span className="underline cursor-pointer">
-                  Modifica questi dati
-                </span>
-                <svg
-                  className="ms-5 cursor-pointer"
-                  width={16}
-                  height={16}
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2.16667 14.0174H3.35417L11.5 5.87158L10.3125 4.68408L2.16667 12.8299V14.0174ZM0.5 15.6841V12.1424L11.5 1.16325C11.6667 1.01047 11.8507 0.892415 12.0521 0.809082C12.2535 0.725749 12.4653 0.684082 12.6875 0.684082C12.9097 0.684082 13.125 0.725749 13.3333 0.809082C13.5417 0.892415 13.7222 1.01742 13.875 1.18408L15.0208 2.35075C15.1875 2.50353 15.309 2.68408 15.3854 2.89242C15.4618 3.10075 15.5 3.30908 15.5 3.51742C15.5 3.73964 15.4618 3.95144 15.3854 4.15283C15.309 4.35422 15.1875 4.53825 15.0208 4.70492L4.04167 15.6841H0.5ZM10.8958 5.28825L10.3125 4.68408L11.5 5.87158L10.8958 5.28825Z"
-                    fill="#FB7185"
-                  />
-                </svg>
-              </p>
+                <p className="text-[12px]">
+                  <span className="text-[20px]">2 rooms, </span>optimal
+                  condition
+                </p>
+              </div>
+              <div className="mt-5">
+                <p className="text-rose-400 text-[12px] flex items-center">
+                  <span className="underline cursor-pointer">
+                    Modifica questi dati
+                  </span>
+                  <svg
+                    className="ms-5 cursor-pointer"
+                    width={16}
+                    height={16}
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.16667 14.0174H3.35417L11.5 5.87158L10.3125 4.68408L2.16667 12.8299V14.0174ZM0.5 15.6841V12.1424L11.5 1.16325C11.6667 1.01047 11.8507 0.892415 12.0521 0.809082C12.2535 0.725749 12.4653 0.684082 12.6875 0.684082C12.9097 0.684082 13.125 0.725749 13.3333 0.809082C13.5417 0.892415 13.7222 1.01742 13.875 1.18408L15.0208 2.35075C15.1875 2.50353 15.309 2.68408 15.3854 2.89242C15.4618 3.10075 15.5 3.30908 15.5 3.51742C15.5 3.73964 15.4618 3.95144 15.3854 4.15283C15.309 4.35422 15.1875 4.53825 15.0208 4.70492L4.04167 15.6841H0.5ZM10.8958 5.28825L10.3125 4.68408L11.5 5.87158L10.8958 5.28825Z"
+                      fill="#FB7185"
+                    />
+                  </svg>
+                </p>
+              </div>
             </div>
           </div>
           <div className="w-[45%]">
             <p className="text-[12px] flex items-center ">
               Le tue Informazioni.
-              <IoIosArrowUp className="text-[15px] ms-4" />
+              {openSections[4] ? (
+                <IoIosArrowUp
+                  className="text-[15px] ms-4 cursor-pointer"
+                  onClick={() => toggleSection(4)}
+                />
+              ) : (
+                <IoIosArrowDown
+                  className="text-[15px] ms-4 cursor-pointer"
+                  onClick={() => toggleSection(4)}
+                />
+              )}{" "}
             </p>
-            <div className="mt-5 text-gray-50">
-              <p className="text-[12px]">
-                <span className="text-[20px]">€ 20,000 </span> is your{" "}
-                <b> available capital</b>
-              </p>
-              <p className="text-[12px]">
-                <span className="text-[20px]">20 </span> years <b> mortgage</b>
-              </p>
+            <div
+              ref={sectionRefs[4]}
+              className="transition-max-height duration-300 ease-in-out overflow-hidden"
+            >
+              <div className="mt-5 text-gray-50">
+                <p className="text-[12px]">
+                  <span className="text-[20px]">€ 20,000 </span> is your{" "}
+                  <b> available capital</b>
+                </p>
+                <p className="text-[12px]">
+                  <span className="text-[20px]">20 </span> years{" "}
+                  <b> mortgage</b>
+                </p>
 
-              <p className="text-[12px]">
-                <span className="text-[20px]">4.5% </span>mortgage
-                <b> interest</b> rate
-              </p>
-            </div>
-            <div className="mt-5">
-              <p className="text-rose-400 text-[12px] flex items-center">
-                <span className="underline cursor-pointer">
-                  Modifica questi dati
-                </span>
-                <svg
-                  className="ms-5 cursor-pointer"
-                  width={16}
-                  height={16}
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2.16667 14.0174H3.35417L11.5 5.87158L10.3125 4.68408L2.16667 12.8299V14.0174ZM0.5 15.6841V12.1424L11.5 1.16325C11.6667 1.01047 11.8507 0.892415 12.0521 0.809082C12.2535 0.725749 12.4653 0.684082 12.6875 0.684082C12.9097 0.684082 13.125 0.725749 13.3333 0.809082C13.5417 0.892415 13.7222 1.01742 13.875 1.18408L15.0208 2.35075C15.1875 2.50353 15.309 2.68408 15.3854 2.89242C15.4618 3.10075 15.5 3.30908 15.5 3.51742C15.5 3.73964 15.4618 3.95144 15.3854 4.15283C15.309 4.35422 15.1875 4.53825 15.0208 4.70492L4.04167 15.6841H0.5ZM10.8958 5.28825L10.3125 4.68408L11.5 5.87158L10.8958 5.28825Z"
-                    fill="#FB7185"
-                  />
-                </svg>
-              </p>
+                <p className="text-[12px]">
+                  <span className="text-[20px]">4.5% </span>mortgage
+                  <b> interest</b> rate
+                </p>
+              </div>
+              <div className="mt-5">
+                <p className="text-rose-400 text-[12px] flex items-center">
+                  <span className="underline cursor-pointer">
+                    Modifica questi dati
+                  </span>
+                  <svg
+                    className="ms-5 cursor-pointer"
+                    width={16}
+                    height={16}
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.16667 14.0174H3.35417L11.5 5.87158L10.3125 4.68408L2.16667 12.8299V14.0174ZM0.5 15.6841V12.1424L11.5 1.16325C11.6667 1.01047 11.8507 0.892415 12.0521 0.809082C12.2535 0.725749 12.4653 0.684082 12.6875 0.684082C12.9097 0.684082 13.125 0.725749 13.3333 0.809082C13.5417 0.892415 13.7222 1.01742 13.875 1.18408L15.0208 2.35075C15.1875 2.50353 15.309 2.68408 15.3854 2.89242C15.4618 3.10075 15.5 3.30908 15.5 3.51742C15.5 3.73964 15.4618 3.95144 15.3854 4.15283C15.309 4.35422 15.1875 4.53825 15.0208 4.70492L4.04167 15.6841H0.5ZM10.8958 5.28825L10.3125 4.68408L11.5 5.87158L10.8958 5.28825Z"
+                      fill="#FB7185"
+                    />
+                  </svg>
+                </p>
+              </div>
             </div>
           </div>
         </div>
         <div className="mt-10">
           <p className="text-[12px] flex items-center ">
             Aspettative di guadagno guidate dall’AI.
-            <IoIosArrowUp className="text-[15px] ms-4" />
+            {openSections[5] ? (
+              <IoIosArrowUp
+                className="text-[15px] ms-4 cursor-pointer"
+                onClick={() => toggleSection(5)}
+              />
+            ) : (
+              <IoIosArrowDown
+                className="text-[15px] ms-4 cursor-pointer"
+                onClick={() => toggleSection(5)}
+              />
+            )}{" "}
           </p>
-          <div className="text-[12px] text-gray-50 flex justify-between mt-5 ">
-            <span>Secondo le nostre stime:</span>
-            <span className="text-rose-400 flex items-center">
-              <IoIosInformationCircleOutline className="me-3 text-[20px]" />
-              <span className="underline cursor-pointer">
-                Come sono calcolate queste stime?
+          <div
+            ref={sectionRefs[5]}
+            className="transition-max-height duration-300 ease-in-out overflow-hidden"
+          >
+            <div className="text-[12px] text-gray-50 flex justify-between mt-5 ">
+              <span>Secondo le nostre stime:</span>
+              <span className="text-rose-400 flex items-center">
+                <IoIosInformationCircleOutline className="me-3 text-[20px]" />
+                <span className="underline cursor-pointer">
+                  Come sono calcolate queste stime?
+                </span>
               </span>
-            </span>
-          </div>
-          <div className="mt-5">
-            <p className="text-[12px]">
-              <span className="text-[20px] text-green-300">€ 7,659 /sqm </span>
-              is the expected price rate for this property
-            </p>
-            <p className="text-[12px]">
-              <span className="text-[20px] text-green-300">€ 459,540 </span>
-              is the predicted <b>Value of this Property</b>
-            </p>
-            <p className="text-[12px]">
-              <span className="text-[20px] text-green-300">€ 274 /sqm </span>
-              is the expected rent rate for this property
-            </p>
-            <p className="text-[12px]">
-              <span className="text-[20px] text-green-300">€ 16,495 </span>
-              is the Expected <b>Yearly Rent</b> for this property
-            </p>
-          </div>
-          <div className="mt-5">
-            <p className="text-[12px] flex flex-wrap items-center">
-              <span className="text-[20px] md:text-[30px] text-green-300 me-2">€ 359,540</span>
-              is how much the listing price in{" "}
-              <b className="ms-1">undervalued</b>
-              <IoIosInformationCircleOutline className="text-[15px] md:text-[25px] ms-3" />
-            </p>
-            <p className="text-[12px] flex flex-wrap items-center">
-              <span className="text-[20px] md:text-[30px] text-green-300 me-2">€ 9,739</span>
-              is how much <b className="mx-1">Cash</b> you can expect to{" "}
-              <b className="ms-1">Earn Every Year</b>
-              <IoIosInformationCircleOutline className="text-[15px] md:text-[25px] ms-3" />
-            </p>
-            <p className="text-[12px] flex flex-wrap items-center">
-              <span className="text-[20px] md:text-[30px] text-green-300 me-2">€ 15,243</span>{" "}
-              is your <b className="mx-1">Annual Return</b> for the first 5
-              years
-              <IoIosInformationCircleOutline className="text-[15px] md:text-[25px] ms-3" />
-            </p>
-            <p className="text-[12px] flex flex-wrap items-center">
-              <span className="text-[20px] md:text-[30px] text-green-300 me-2">€ 466,474</span>{" "}
-              is the expected <b className="mx-1">value</b> fo your{" "}
-              <b className="mx-1"> property in 5 years</b>
-              <IoIosInformationCircleOutline className="text-[15px] md:text-[25px] ms-3" />
-            </p>
-            <p className="text-[12px] flex flex-wrap items-center">
-              <span className="text-[20px] md:text-[30px] text-green-300 me-2">13.4%</span> is
-              your expected average{" "}
-              <b className="mx-1">Return on Investment </b> fo your in the first
-              5 years{" "}
-              <IoIosInformationCircleOutline className="text-[15px] md:text-[25px] ms-3" />
-            </p>
-          </div>
-          <div className="mt-5">
-            <p className="text-[12px]">
-              <span className="text-[20px] text-green-300">12% </span> is your
-              expected
-              <b>Return on Investment </b> in the first year.
-            </p>
-            <p className="text-[12px]">
-              <span className="text-[20px] text-green-300">19% </span>
-              is your expected <b>Return on Investment </b> for the duration of
-              your mortgage.
-            </p>
-            <p className="text-[12px]">
-              <span className="text-[20px] text-green-300">6 months</span>
-              is your <b>break-even</b> point. That’s how long you need to wait
-              for getting your initial capital back
-            </p>
-            <p className="text-[12px]">
-              <span className="text-[20px] text-green-300">0.3% </span>
-              is the Expected <b>Yearly Growth</b> of your{" "}
-              <b> Property Value</b>
-            </p>
-          </div>
-          <div className="mt-5">
-            <p className="text-rose-400 text-[12px] flex items-center">
-              <span className="underline cursor-pointer">
-                Compara il tuo ROI ad altri asset{" "}
-              </span>
-              <svg
-                width={18}
-                height={11}
-                className="ms-4 cursor-pointer"
-                viewBox="0 0 18 11"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.83329 10.7301L0.666626 9.56344L6.83329 3.3551L10.1666 6.68844L14.5 2.39677H12.3333V0.730103H17.3333V5.7301H15.6666V3.56344L10.1666 9.06344L6.83329 5.7301L1.83329 10.7301Z"
-                  fill="#FB7185"
-                />
-              </svg>
-            </p>
+            </div>
+            <div className="mt-5">
+              <p className="text-[12px]">
+                <span className="text-[20px] text-green-300">
+                  € 7,659 /sqm{" "}
+                </span>
+                is the expected price rate for this property
+              </p>
+              <p className="text-[12px]">
+                <span className="text-[20px] text-green-300">€ 459,540 </span>
+                is the predicted <b>Value of this Property</b>
+              </p>
+              <p className="text-[12px]">
+                <span className="text-[20px] text-green-300">€ 274 /sqm </span>
+                is the expected rent rate for this property
+              </p>
+              <p className="text-[12px]">
+                <span className="text-[20px] text-green-300">€ 16,495 </span>
+                is the Expected <b>Yearly Rent</b> for this property
+              </p>
+            </div>
+            <div className="mt-5">
+              <p className="text-[12px] flex flex-wrap items-center">
+                <span className="text-[20px] md:text-[30px] text-green-300 me-2">
+                  € 359,540
+                </span>
+                is how much the listing price in{" "}
+                <b className="ms-1">undervalued</b>
+                <IoIosInformationCircleOutline className="text-[15px] md:text-[25px] ms-3" />
+              </p>
+              <p className="text-[12px] flex flex-wrap items-center">
+                <span className="text-[20px] md:text-[30px] text-green-300 me-2">
+                  € 9,739
+                </span>
+                is how much <b className="mx-1">Cash</b> you can expect to{" "}
+                <b className="ms-1">Earn Every Year</b>
+                <IoIosInformationCircleOutline className="text-[15px] md:text-[25px] ms-3" />
+              </p>
+              <p className="text-[12px] flex flex-wrap items-center">
+                <span className="text-[20px] md:text-[30px] text-green-300 me-2">
+                  € 15,243
+                </span>{" "}
+                is your <b className="mx-1">Annual Return</b> for the first 5
+                years
+                <IoIosInformationCircleOutline className="text-[15px] md:text-[25px] ms-3" />
+              </p>
+              <p className="text-[12px] flex flex-wrap items-center">
+                <span className="text-[20px] md:text-[30px] text-green-300 me-2">
+                  € 466,474
+                </span>{" "}
+                is the expected <b className="mx-1">value</b> fo your{" "}
+                <b className="mx-1"> property in 5 years</b>
+                <IoIosInformationCircleOutline className="text-[15px] md:text-[25px] ms-3" />
+              </p>
+              <p className="text-[12px] flex flex-wrap items-center">
+                <span className="text-[20px] md:text-[30px] text-green-300 me-2">
+                  13.4%
+                </span>{" "}
+                is your expected average{" "}
+                <b className="mx-1">Return on Investment </b> fo your in the
+                first 5 years{" "}
+                <IoIosInformationCircleOutline className="text-[15px] md:text-[25px] ms-3" />
+              </p>
+            </div>
+            <div className="mt-5">
+              <p className="text-[12px]">
+                <span className="text-[20px] text-green-300">12% </span> is your
+                expected
+                <b>Return on Investment </b> in the first year.
+              </p>
+              <p className="text-[12px]">
+                <span className="text-[20px] text-green-300">19% </span>
+                is your expected <b>Return on Investment </b> for the duration
+                of your mortgage.
+              </p>
+              <p className="text-[12px]">
+                <span className="text-[20px] text-green-300">6 months</span>
+                is your <b>break-even</b> point. That’s how long you need to
+                wait for getting your initial capital back
+              </p>
+              <p className="text-[12px]">
+                <span className="text-[20px] text-green-300">0.3% </span>
+                is the Expected <b>Yearly Growth</b> of your{" "}
+                <b> Property Value</b>
+              </p>
+            </div>
+            <div className="mt-5">
+              <p className="text-rose-400 text-[12px] flex items-center">
+                <span className="underline cursor-pointer">
+                  Compara il tuo ROI ad altri asset{" "}
+                </span>
+                <svg
+                  width={18}
+                  height={11}
+                  className="ms-4 cursor-pointer"
+                  viewBox="0 0 18 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.83329 10.7301L0.666626 9.56344L6.83329 3.3551L10.1666 6.68844L14.5 2.39677H12.3333V0.730103H17.3333V5.7301H15.6666V3.56344L10.1666 9.06344L6.83329 5.7301L1.83329 10.7301Z"
+                    fill="#FB7185"
+                  />
+                </svg>
+              </p>
+            </div>
           </div>
         </div>
         <div className="mt-10">
           <p className="text-[12px] flex items-center ">
             Predizione di prezzo dell’immobile.
-            <IoIosArrowUp className="text-[15px] ms-4" />
+            {openSections[6] ? (
+              <IoIosArrowUp
+                className="text-[15px] ms-4 cursor-pointer"
+                onClick={() => toggleSection(6)}
+              />
+            ) : (
+              <IoIosArrowDown
+                className="text-[15px] ms-4 cursor-pointer"
+                onClick={() => toggleSection(6)}
+              />
+            )}{" "}
           </p>
-          <div className="mt-5">
+          <div
+            ref={sectionRefs[6]}
+            className="transition-max-height duration-300 ease-in-out overflow-hidden mt-5"
+          >
             <h3 className="text-lg ">Prezzo dell’immobile</h3>
             <p className="text-[14px] text-gray-500">Subtitle</p>
 
@@ -493,9 +654,22 @@ function page() {
         <div className="mt-10">
           <p className="text-[12px] flex items-center ">
             Stima dell’anadamento del prezzo di Affitto.
-            <IoIosArrowUp className="text-[15px] ms-4" />
+            {openSections[7] ? (
+              <IoIosArrowUp
+                className="text-[15px] ms-4 cursor-pointer"
+                onClick={() => toggleSection(7)}
+              />
+            ) : (
+              <IoIosArrowDown
+                className="text-[15px] ms-4 cursor-pointer"
+                onClick={() => toggleSection(7)}
+              />
+            )}{" "}
           </p>
-          <div className="mt-5">
+          <div
+            ref={sectionRefs[7]}
+            className="transition-max-height duration-300 ease-in-out overflow-hidden mt-5"
+          >
             <h3 className="text-lg ">Prezzo di Affitto</h3>
             <p className="text-[14px] text-gray-500">Subtitle</p>
 
@@ -512,9 +686,22 @@ function page() {
         <div className="mt-10">
           <p className="text-[12px] flex items-center ">
             Statistiche Avanzate.
-            <IoIosArrowUp className="text-[15px] ms-4" />
+            {openSections[8] ? (
+              <IoIosArrowUp
+                className="text-[15px] ms-4 cursor-pointer"
+                onClick={() => toggleSection(8)}
+              />
+            ) : (
+              <IoIosArrowDown
+                className="text-[15px] ms-4 cursor-pointer"
+                onClick={() => toggleSection(8)}
+              />
+            )}{" "}
           </p>
-          <div className="flex justify-between mt-5">
+          <div
+            ref={sectionRefs[8]}
+            className="transition-max-height duration-300 ease-in-out overflow-hidden flex justify-between mt-5"
+          >
             <div>
               <p>Yield Index</p>
               <p className="text-green-300 text-[12px]">
@@ -565,10 +752,23 @@ function page() {
           <div className="mt-10">
             <p className="text-[12px] flex items-center ">
               Zona di predizione
-              <IoIosArrowUp className="text-[15px] ms-4" />
+              {openSections[9] ? (
+                <IoIosArrowUp
+                  className="text-[15px] ms-4 cursor-pointer"
+                  onClick={() => toggleSection(9)}
+                />
+              ) : (
+                <IoIosArrowDown
+                  className="text-[15px] ms-4 cursor-pointer"
+                  onClick={() => toggleSection(9)}
+                />
+              )}{" "}
             </p>
 
-            <div className="mt-5">
+            <div
+              ref={sectionRefs[9]}
+              className="transition-max-height duration-300 ease-in-out overflow-hidden mt-5"
+            >
               <Image
                 src={"/map.png"}
                 width={1000000000000000}

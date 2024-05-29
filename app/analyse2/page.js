@@ -9,7 +9,7 @@ import {
 import { IoShareSocialOutline } from "react-icons/io5";
 import { MdOutlinePictureAsPdf } from "react-icons/md";
 import { TbWorldSearch } from "react-icons/tb";
-import { AreaChart, ProgressBar, SparkAreaChart } from "@tremor/react";
+import { AreaChart, ProgressBar } from "@tremor/react";
 
 const chartdata2 = [
   {
@@ -149,11 +149,12 @@ function Page() {
         <div className="mt-10">
           <div className="flex flex-col-reverse md:flex-row justify-between">
             <div className="md:w-[45%]">
-              <SparkAreaChart
+              <AreaChart
                 data={chartdata2}
                 index="null"
                 categories={["Price"]}
                 colors={["green"]}
+                yAxisWidth={null}
               />
             </div>
             <div className="md:w-[45%] mb-5">
@@ -171,11 +172,12 @@ function Page() {
           </div>
           <div className="flex flex-col-reverse md:flex-row justify-between mb-5  ">
             <div className="md:w-[45%]">
-              <SparkAreaChart
+              <AreaChart
                 data={chartdata2}
                 index="null"
                 categories={["Price"]}
                 colors={["red"]}
+                yAxisWidth={null}
               />
             </div>
             <div className="md:w-[45%] mb-5 md:mb-0">
@@ -193,11 +195,12 @@ function Page() {
           </div>
           <div className="flex flex-col-reverse md:flex-row justify-between">
             <div className="md:w-[45%]">
-              <SparkAreaChart
+              <AreaChart
                 data={chartdata2}
                 index="null"
                 categories={["Price"]}
                 colors={["green"]}
+                yAxisWidth={null}
               />
             </div>
             <div className="md:w-[45%] mb-5 md:mb-0">

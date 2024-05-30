@@ -119,10 +119,10 @@ function Page() {
         <div className="flex justify-between items-center">
           <h1 className="text-[18px]">Provincia di Milano, Italia.</h1>
           <div className="flex justify-center items-center">
-            <TbWorldSearch className="text-rose-400 text-[24px] cursor-pointer" />
-            <IoMdStarOutline className="text-rose-400 ms-3 text-[24px] cursor-pointer" />
-            <IoShareSocialOutline className="text-rose-400 text-[24px] ms-3 cursor-pointer" />
-            <MdOutlinePictureAsPdf className="text-rose-400 text-[24px] ms-3 cursor-pointer" />
+            <TbWorldSearch className="text-rose-400 text-[24px] cursor-pointer  hover:text-rose-300 transition" />
+            <IoMdStarOutline className="text-rose-400 ms-3 text-[24px] cursor-pointer  hover:text-rose-300 transition" />
+            <IoShareSocialOutline className="text-rose-400 text-[24px] ms-3 cursor-pointer  hover:text-rose-300 transition" />
+            <MdOutlinePictureAsPdf className="text-rose-400 text-[24px] ms-3 cursor-pointer  hover:text-rose-300 transition" />
           </div>
         </div>
         <div className="mt-10">
@@ -130,19 +130,19 @@ function Page() {
             <p className="text-[12px] underline text-rose-400 cursor-pointer  hover:text-rose-300 transition">
               Trova offerte in questa zona
             </p>
-            <TbWorldSearch className="text-rose-400 text-[24px] cursor-pointer ms-5" />
+            <TbWorldSearch className="text-rose-400 text-[24px] cursor-pointer ms-5  hover:text-rose-300 transition" />
           </div>
           <div className="flex items-center mt-4">
             <p className="text-[12px] underline  text-rose-400 cursor-pointer  hover:text-rose-300 transition">
               Salva questa ricerca
             </p>
-            <IoMdStarOutline className="text-rose-400 text-[24px] ms-5" />
+            <IoMdStarOutline className="text-rose-400 text-[24px] ms-5  hover:text-rose-300 transition" />
           </div>
           <div className="flex items-center mt-4">
             <p className="text-[12px] underline text-rose-400 cursor-pointer  hover:text-rose-300 transition">
               Genera Report
             </p>
-            <MdOutlinePictureAsPdf className="text-rose-400 text-[24px] ms-5" />
+            <MdOutlinePictureAsPdf className="text-rose-400 text-[24px] ms-5  hover:text-rose-300 transition" />
           </div>
         </div>
 

@@ -186,9 +186,9 @@ function Page() {
             Bilocale in Piazza Giorgio Simone Ohm, Milano.
           </h1>
           <div className="flex justify-center items-center">
-            <IoMdStarOutline className="text-rose-400 text-[24px] cursor-pointer" />
-            <IoShareSocialOutline className="text-rose-400 text-[24px] ms-3 cursor-pointer" />
-            <MdOutlinePictureAsPdf className="text-rose-400 text-[24px] ms-3 cursor-pointer" />
+            <IoMdStarOutline className="text-rose-400 text-[24px] cursor-pointer  hover:text-rose-300 transition" />
+            <IoShareSocialOutline className="text-rose-400 text-[24px] ms-3 cursor-pointer  hover:text-rose-300 transition" />
+            <MdOutlinePictureAsPdf className="text-rose-400 text-[24px] ms-3 cursor-pointer hover:text-rose-300 transition" />
             <svg
               className="w-[20px] ms-3 cursor-pointer"
               width="{20}"
@@ -228,13 +228,13 @@ function Page() {
             <p className="text-[12px] underline  text-rose-400 cursor-pointer hover:text-rose-300 transition">
               Salva questo immobile nei preferiti{" "}
             </p>
-            <IoMdStarOutline className="text-rose-400 text-[24px] ms-5 cursor-pointer" />
+            <IoMdStarOutline className="text-rose-400 text-[24px] ms-5 cursor-pointer  hover:text-rose-300 transition" />
           </div>
           <div className="flex items-center mt-4">
             <p className="text-[12px] underline text-rose-400 cursor-pointer hover:text-rose-300 transition">
               Genera Report
             </p>
-            <MdOutlinePictureAsPdf className="text-rose-400 text-[24px] ms-5 cursor-pointer " />
+            <MdOutlinePictureAsPdf className="text-rose-400 text-[24px] ms-5 cursor-pointer  hover:text-rose-300 transition" />
           </div>
         </div>
         <div>
@@ -504,7 +504,7 @@ function Page() {
           >
             <div className="text-[12px] text-gray-50 flex justify-between mt-5 ">
               <span>Secondo le nostre stime:</span>
-              <span className="text-rose-400 flex items-center">
+              <span className="text-rose-400 flex items-center  hover:text-rose-300 transition">
                 <IoIosInformationCircleOutline className="me-3 text-[20px]" />
                 <span className="underline cursor-pointer hover:text-rose-300 transition">
                   Come sono calcolate queste stime?
@@ -597,7 +597,7 @@ function Page() {
               </p>
             </div>
             <div className="mt-5">
-              <p className="text-rose-400 text-[12px] flex items-center">
+              <p className="text-rose-400  hover:text-rose-300 transition text-[12px] flex items-center">
                 <span className="underline cursor-pointer hover:text-rose-300 transition">
                   Compara il tuo ROI ad altri asset{" "}
                 </span>

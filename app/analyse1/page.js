@@ -226,7 +226,7 @@ function Page() {
           </div>
           <div className="flex items-center mt-4">
             <p className="text-[12px] underline  text-rose-400 cursor-pointer hover:text-rose-300 transition">
-              Salva questo immobile nei preferiti{" "}
+              Salva questo immobile nei preferiti
             </p>
             <IoMdStarOutline className="text-rose-400 text-[24px] ms-5 cursor-pointer  hover:text-rose-300 transition" />
           </div>

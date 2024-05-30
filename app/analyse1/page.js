@@ -182,7 +182,7 @@ function Page() {
     <div className="container-analyse bg-zinc-900 min-h-[100vh]">
       <div className="px-10 py-5">
         <div className="flex justify-between items-center">
-          <h1 className="text-[18px]">
+          <h1 className="text-[14px] md:text-[18px]">
             Bilocale in Piazza Giorgio Simone Ohm, Milano.
           </h1>
           <div className="flex justify-center items-center">
@@ -207,7 +207,7 @@ function Page() {
 
         <div className="mt-10">
           <div className="flex items-center">
-            <p className="text-[12px] underline text-rose-400 cursor-pointer">
+            <p className="text-[12px] underline text-rose-400 cursor-pointer  hover:text-rose-300 transition">
               Visita l’annuncio originale
             </p>
             <svg
@@ -225,16 +225,16 @@ function Page() {
             </svg>
           </div>
           <div className="flex items-center mt-4">
-            <p className="text-[12px] underline  text-rose-400 cursor-pointer">
+            <p className="text-[12px] underline  text-rose-400 cursor-pointer hover:text-rose-300 transition">
               Salva questo immobile nei preferiti{" "}
             </p>
-            <IoMdStarOutline className="text-rose-400 text-[24px] ms-5" />
+            <IoMdStarOutline className="text-rose-400 text-[24px] ms-5 cursor-pointer" />
           </div>
           <div className="flex items-center mt-4">
-            <p className="text-[12px] underline text-rose-400 cursor-pointer">
+            <p className="text-[12px] underline text-rose-400 cursor-pointer hover:text-rose-300 transition">
               Genera Report
             </p>
-            <MdOutlinePictureAsPdf className="text-rose-400 text-[24px] ms-5" />
+            <MdOutlinePictureAsPdf className="text-rose-400 text-[24px] ms-5 cursor-pointer " />
           </div>
         </div>
         <div>
@@ -405,8 +405,8 @@ function Page() {
                 </p>
               </div>
               <div className="mt-5">
-                <p className="text-rose-400 text-[12px] flex items-center">
-                  <span className="underline cursor-pointer">
+                <p className="text-rose-400 text-[12px] flex items-center hover:text-rose-300 transition">
+                  <span className="underline cursor-pointer ">
                     Modifica questi dati
                   </span>
                   <svg
@@ -461,7 +461,7 @@ function Page() {
                 </p>
               </div>
               <div className="mt-5">
-                <p className="text-rose-400 text-[12px] flex items-center">
+                <p className="text-rose-400 text-[12px] flex items-center hover:text-rose-300 transition">
                   <span className="underline cursor-pointer">
                     Modifica questi dati
                   </span>
@@ -506,7 +506,7 @@ function Page() {
               <span>Secondo le nostre stime:</span>
               <span className="text-rose-400 flex items-center">
                 <IoIosInformationCircleOutline className="me-3 text-[20px]" />
-                <span className="underline cursor-pointer">
+                <span className="underline cursor-pointer hover:text-rose-300 transition">
                   Come sono calcolate queste stime?
                 </span>
               </span>
@@ -598,7 +598,7 @@ function Page() {
             </div>
             <div className="mt-5">
               <p className="text-rose-400 text-[12px] flex items-center">
-                <span className="underline cursor-pointer">
+                <span className="underline cursor-pointer hover:text-rose-300 transition">
                   Compara il tuo ROI ad altri asset{" "}
                 </span>
                 <svg
@@ -700,7 +700,7 @@ function Page() {
           </p>
           <div
             ref={sectionRefs[8]}
-            className="transition-max-height duration-300 ease-in-out overflow-hidden flex justify-between mt-5"
+            className="transition-max-height duration-300 ease-in-out overflow-hidden flex md:justify-center justify-between md:gap-32 mt-5"
           >
             <div>
               <p>Yield Index</p>

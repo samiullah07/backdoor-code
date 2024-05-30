@@ -127,19 +127,19 @@ function Page() {
         </div>
         <div className="mt-10">
           <div className="flex items-center">
-            <p className="text-[12px] underline text-rose-400 cursor-pointer">
+            <p className="text-[12px] underline text-rose-400 cursor-pointer  hover:text-rose-300 transition">
               Trova offerte in questa zona
             </p>
             <TbWorldSearch className="text-rose-400 text-[24px] cursor-pointer ms-5" />
           </div>
           <div className="flex items-center mt-4">
-            <p className="text-[12px] underline  text-rose-400 cursor-pointer">
+            <p className="text-[12px] underline  text-rose-400 cursor-pointer  hover:text-rose-300 transition">
               Salva questa ricerca
             </p>
             <IoMdStarOutline className="text-rose-400 text-[24px] ms-5" />
           </div>
           <div className="flex items-center mt-4">
-            <p className="text-[12px] underline text-rose-400 cursor-pointer">
+            <p className="text-[12px] underline text-rose-400 cursor-pointer  hover:text-rose-300 transition">
               Genera Report
             </p>
             <MdOutlinePictureAsPdf className="text-rose-400 text-[24px] ms-5" />
@@ -317,7 +317,7 @@ function Page() {
         </div>
 
         <div className="flex justify-center items-center mt-10">
-          <p className="text-[12px] underline text-rose-400 cursor-pointer">
+          <p className="text-[12px] underline text-rose-400 cursor-pointer  hover:text-rose-300 transition">
             Trova offerte in questa zona
           </p>
           <TbWorldSearch className="text-rose-400 text-[24px] cursor-pointer ms-5" />

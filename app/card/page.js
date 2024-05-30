@@ -27,7 +27,7 @@ function Card() {
     setTimeout(() => {
       setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1));
       setInProp(true);
-    }, 500); // Match the transition duration
+    }, 800); // Match the transition duration
   };
 
   const previousStep = () => {
@@ -35,7 +35,7 @@ function Card() {
     setTimeout(() => {
       setCurrentStep((prev) => Math.max(prev - 1, 0));
       setInProp(true);
-    }, 500); // Match the transition duration
+    }, 800); // Match the transition duration
   };
 
   const CurrentComponent = steps[currentStep].component;
@@ -44,7 +44,7 @@ function Card() {
       <div className="w-[100%] md:flex justify-center">
         <CSSTransition
           in={inProp}
-          timeout={500}
+          timeout={789}
           classNames={{
             enter: styles["fade-enter"],
             enterActive: styles["fade-enter-active"],

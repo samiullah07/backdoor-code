@@ -6,7 +6,7 @@ import { IoIosInformationCircleOutline } from "react-icons/io";
 
 function Wizard5({ next, previous }) {
   return (
-    <div className="w-[100%] md:w-[800px] h-[530px] bg-zinc-900 rounded-md pt-6 relative">
+    <div className="h-[530px] ">
       <div className="flex justify-center">
         <Image
           src={"/logo-2.png"}
@@ -40,14 +40,6 @@ function Wizard5({ next, previous }) {
               className=" text-rose-400 text-[20px] cursor-pointer"
             />
           </div>
-        </div>
-      </div>
-      <div className="flex justify-center absolute bottom-6 w-[100%]">
-        <div className="flex gap-1">
-          <GoDot className="cursor-pointer" onClick={previous} />
-          <GoDot className="cursor-pointer" onClick={previous} />
-          <GoDot className="cursor-pointer" onClick={previous} />
-          <GoDotFill className="cursor-pointer" />
         </div>
       </div>
     </div>

@@ -54,7 +54,7 @@ function Card() {
           key={steps[currentStep].id}
           unmountOnExit
         >
-          <div>
+          <div className="w-[100%] md:w-[800px] h-[530px] bg-zinc-900 rounded-md pt-6 ">
             <CurrentComponent next={nextStep} previous={previousStep} />
           </div>
         </CSSTransition>

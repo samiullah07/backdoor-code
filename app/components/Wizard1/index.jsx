@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 function Wizard1({ next }) {
   return (
-    <div className="w-[100%] md:w-[800px] h-[530px] bg-zinc-900 rounded-md flex justify-center items-center">
+    <div className="h-[530px] flex justify-center items-center">
       <div className="text-center">
         <div className="flex justify-center">
           <Image

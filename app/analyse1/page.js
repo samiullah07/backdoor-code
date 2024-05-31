@@ -700,9 +700,9 @@ function Page() {
           </p>
           <div
             ref={sectionRefs[8]}
-            className="transition-max-height duration-300 ease-in-out overflow-hidden flex md:justify-center justify-between md:gap-32 mt-5"
+            className="transition-max-height duration-300 ease-in-out overflow-hidden flex justify-between md:gap-32 mt-5"
           >
-            <div>
+            <div className="w-[45%]">
               <p>Yield Index</p>
               <p className="text-green-300 text-[12px]">
                 <span className="text-[20px]">8.9</span>/10
@@ -722,7 +722,7 @@ function Page() {
               <p>Annual Cash Flow</p>
               <p className="text-green-300 text-[20px]">€ 9,739</p>
             </div>
-            <div>
+            <div className="w-[45%]">
               <p>ROI (year 1)</p>
               <p className="text-green-300 text-[12px]">
                 <span className="text-[20px]">8.9</span>/10

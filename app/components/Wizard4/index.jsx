@@ -9,7 +9,7 @@ import {
 } from "react-icons/io";
 
 function Wizard3({ next, previous }) {
-  const [selectedItem, useSlectedItem] = useState(true);
+  const [selectedItem, setSelectedItem] = useState(true);
 
   return (
     <div className="h-[530px]">
@@ -32,7 +32,7 @@ function Wizard3({ next, previous }) {
             className={`w-[278px] border-[2px] py-2 mt-1  border-gray-300 ${
               selectedItem && "border-rose-500 "
             } flex justify-center items-center rounded cursor-pointer transition`}
-            onClick={() => useSlectedItem(true)}
+            onClick={() => setSelectedItem(true)}
           >
             <div className="text-center">
               <p className="flex items-center justify-center">
@@ -55,7 +55,7 @@ function Wizard3({ next, previous }) {
             className={`w-[278px] border-[2px] py-2 mt-2 border-gray-300  ${
               !selectedItem && "border-rose-500 "
             }  flex justify-center items-center rounded cursor-pointer transition`}
-            onClick={() => useSlectedItem(false)}
+            onClick={() => setSelectedItem(false)}
           >
             <div className="text-center">
               <p className="flex items-center justify-center">

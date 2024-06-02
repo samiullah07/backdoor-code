@@ -5,7 +5,7 @@ import { GoDot, GoDotFill } from "react-icons/go";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
 function Wizard5({ next, previous }) {
-  const [selectedItem, useSlectedItem] = useState(true);
+  const [selectedItem, setSelectedItem] = useState(true);
 
   return (
     <div className="h-[530px] ">
@@ -28,7 +28,7 @@ function Wizard5({ next, previous }) {
             className={`w-[278px] border-[2px] py-2 mt-5 rounded-full  border-gray-300 ${
               selectedItem && "border-rose-500 "
             } flex justify-center items-center cursor-pointer transition`}
-            onClick={() => useSlectedItem(true)}
+            onClick={() => setSelectedItem(true)}
           >
             <div className="text-center flex items-center">
               Residenziale{" "}
@@ -39,7 +39,7 @@ function Wizard5({ next, previous }) {
             className={`w-[278px] border-[2px] py-2 mt-5 rounded-full border-gray-300 ${
               !selectedItem && "border-rose-500 "
             } flex justify-center items-center cursor-pointer transition`}
-            onClick={() => useSlectedItem(false)}
+            onClick={() => setSelectedItem(false)}
           >
             <div className="text-center flex items-center">
               Commerciale{" "}

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { GoDot, GoDotFill } from "react-icons/go";
 import {
@@ -9,6 +9,7 @@ import {
 } from "react-icons/io";
 
 function Wizard3({ next, previous }) {
+  const [selectedItem, useSlectedItem] = useState("incomeProperty");
   return (
     <div className=" h-[530px relative">
       <div className="flex justify-center">
@@ -26,7 +27,12 @@ function Wizard3({ next, previous }) {
             Quale strategia preferisci?{" "}
             <IoIosInformationCircleOutline className="ms-5 text-[20px]" />
           </h1>
-          <div className="w-[278px] border-[2px] py-2 mt-1 border-rose-500 flex justify-center items-center rounded ">
+          <div
+            className={`w-[278px] border-[2px] py-2 mt-1 border-gray-300 ${
+              selectedItem == "incomeProperty" && "border-rose-500 "
+            } flex justify-center items-center rounded cursor-pointer transition `}
+            onClick={() => useSlectedItem("incomeProperty")}
+          >
             <div className="text-center">
               <p className="flex items-center">
                 Immobile a Reddito{" "}
@@ -43,7 +49,12 @@ function Wizard3({ next, previous }) {
               </p>
             </div>
           </div>
-          <div className="w-[278px] border-[2px] py-2 mt-2 border-gray-300 flex justify-center items-center rounded ">
+          <div
+            className={`w-[278px] border-[2px] py-2 mt-2  border-gray-300 ${
+              selectedItem == "buyandSell" && "border-rose-500 "
+            } flex justify-center items-center rounded cursor-pointer`}
+            onClick={() => useSlectedItem("buyandSell")}
+          >
             <div className="text-center">
               <p className="flex items-center">
                 Compra e Vendi{" "}
@@ -87,7 +98,6 @@ function Wizard3({ next, previous }) {
           </div>
         </div>
       </div>
-    
     </div>
   );
 }

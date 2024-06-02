@@ -13,24 +13,26 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Sect2 />
-      <Discover />
-      <Immobiliare />
-      <div>
-        <div className="relative h-full w-full bg-zinc-900">
-          <div class="grid-background"></div>
+      <div className="home-container">
+        <Hero />
+        <Sect2 />
+        <Discover />
+        <Immobiliare />
+        <div>
+          <div className="relative h-full w-full bg-zinc-900">
+            <div class="grid-background"></div>
 
-          <div className="all-sec">
-            <Search />
-            <Zones />
-            <Ai />
-            <HowItWorks />
+            <div className="all-sec">
+              <Search />
+              <Zones />
+              <Ai />
+              <HowItWorks />
+            </div>
           </div>
         </div>
+        <Faq />
+        <Footer />
       </div>
-      <Faq />
-      <Footer />
     </>
   );
 }

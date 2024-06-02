@@ -63,8 +63,10 @@
 }
 
 body {
-  font-family: "PP Neue Montreal Book" !important;
   color: #fff;
+}
+.home-container {
+  font-family: "PP Neue Montreal Book" !important;
 }
 .main-btn {
   padding: 5px 5px;

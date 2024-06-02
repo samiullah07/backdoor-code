@@ -1,10 +1,12 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { GoDot, GoDotFill } from "react-icons/go";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
 function Wizard5({ next, previous }) {
+  const [selectedItem, useSlectedItem] = useState(true);
+
   return (
     <div className="h-[530px] ">
       <div className="flex justify-center">
@@ -22,13 +24,23 @@ function Wizard5({ next, previous }) {
             Scegli la tipologia di immobile:{" "}
             <IoIosInformationCircleOutline className="ms-5 text-[20px]" />
           </h1>
-          <div className="w-[278px] border-[2px] py-2 mt-5 rounded-full border-rose-500 flex justify-center items-center ">
+          <div
+            className={`w-[278px] border-[2px] py-2 mt-5 rounded-full  border-gray-300 ${
+              selectedItem && "border-rose-500 "
+            } flex justify-center items-center cursor-pointer transition`}
+            onClick={() => useSlectedItem(true)}
+          >
             <div className="text-center flex items-center">
               Residenziale{" "}
               <IoIosInformationCircleOutline className="ms-5 text-[17px]" />
             </div>
           </div>
-          <div className="w-[278px] border-[2px] py-2 mt-5 rounded-full border-gray-300 flex justify-center items-center ">
+          <div
+            className={`w-[278px] border-[2px] py-2 mt-5 rounded-full border-gray-300 ${
+              !selectedItem && "border-rose-500 "
+            } flex justify-center items-center cursor-pointer transition`}
+            onClick={() => useSlectedItem(false)}
+          >
             <div className="text-center flex items-center">
               Commerciale{" "}
               <IoIosInformationCircleOutline className="ms-5 text-[17px]" />

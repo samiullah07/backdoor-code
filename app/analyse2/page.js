@@ -320,7 +320,7 @@ function Page() {
           <p className="text-[12px] underline text-rose-400 cursor-pointer  hover:text-rose-300 transition">
             Trova offerte in questa zona
           </p>
-          <TbWorldSearch className="text-rose-400 text-[24px] cursor-pointer ms-5" />
+          <TbWorldSearch className="text-rose-400 text-[24px] cursor-pointer ms-5  hover:text-rose-300 transition " />
         </div>
       </div>
     </div>

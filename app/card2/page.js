@@ -53,32 +53,40 @@ function Page() {
               {renderWizard()}
             </motion.div>
           </AnimatePresence>
-          <div className="flex justify-center absolute bottom-6 w-[100%]">
+          <div className="flex justify-center absolute bottom-6 w-[100%] transition">
             {step >= 2 && 5 >= step && (
-              <div className="flex gap-1">
-                <>
-                  {step === 2 ? (
-                    <GoDotFill className="cursor-pointer" />
-                  ) : (
-                    <GoDot className="cursor-pointer" />
-                  )}
-                  {step === 3 ? (
-                    <GoDotFill className="cursor-pointer" />
-                  ) : (
-                    <GoDot className="cursor-pointer" />
-                  )}
-                  {step === 4 ? (
-                    <GoDotFill className="cursor-pointer" />
-                  ) : (
-                    <GoDot className="cursor-pointer" />
-                  )}
-                  {step === 5 ? (
-                    <GoDotFill className="cursor-pointer" />
-                  ) : (
-                    <GoDot className="cursor-pointer" />
-                  )}
-                </>
-              </div>
+              <motion.div
+                key={step}
+                initial={step === 2 && { opacity: 1, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="flex gap-1">
+                  <>
+                    {step === 2 ? (
+                      <GoDotFill className="cursor-pointer transition" />
+                    ) : (
+                      <GoDot className="cursor-pointer transition" />
+                    )}
+                    {step === 3 ? (
+                      <GoDotFill className="cursor-pointer transition" />
+                    ) : (
+                      <GoDot className="cursor-pointer transition" />
+                    )}
+                    {step === 4 ? (
+                      <GoDotFill className="cursor-pointer transition" />
+                    ) : (
+                      <GoDot className="cursor-pointer transition" />
+                    )}
+                    {step === 5 ? (
+                      <GoDotFill className="cursor-pointer transition" />
+                    ) : (
+                      <GoDot className="cursor-pointer transition" />
+                    )}
+                  </>
+                </div>
+              </motion.div>
             )}
           </div>
         </div>

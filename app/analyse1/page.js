@@ -256,7 +256,7 @@ function Page() {
           </div>
           <div
             ref={sectionRefs[0]}
-            className="transition-max-height duration-300 ease-in-out overflow-hidden"
+            className="transition-max-height duration-300 ease-in-out overflow-hidden h-[80vh] md:h-[100%]"
           >
             <div className="md:flex justify-between mt-8 md:gap-14">
               <div className="w-[100%] mb-5 md:mb-0">
